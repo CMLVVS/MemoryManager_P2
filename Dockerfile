@@ -1,15 +1,12 @@
-# Usar imagen base con Java 17
-FROM openjdk:17-jdk-slim
+# Usar imagen con Maven y Java 17 preinstalados
+FROM maven:3.9.4-eclipse-temurin-17-alpine
 
-# Crear directorio de trabajo dentro del contenedor
+# Crear directorio de trabajo
 WORKDIR /app
 
-# Copiar el código fuente
+# Copiar código fuente
 COPY src /app/src
 COPY pom.xml /app/
-
-# Instalar Maven para compilar
-RUN apt-get update && apt-get install -y maven
 
 # Compilar el proyecto
 RUN mvn clean compile
