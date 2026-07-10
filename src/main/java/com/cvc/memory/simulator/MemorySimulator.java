@@ -6,7 +6,7 @@ public class MemorySimulator {
     private static MemoryManager manager;
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void runMemorySimulator() {
         System.out.println("=== SIMULADOR DE ASIGNACIÓN DE MEMORIA ===");
         System.out.print("Ingrese el tamaño total de memoria (KB): ");
         int total = scanner.nextInt();
@@ -20,7 +20,7 @@ public class MemorySimulator {
             System.out.println("3. Crear proceso (Worst Fit)");
             System.out.println("4. Liberar proceso");
             System.out.println("5. Mostrar estado de memoria");
-            System.out.println("6. Salir");
+            System.out.println("6. Salir al menú principal");
             System.out.print("Opción: ");
             opcion = scanner.nextInt();
             scanner.nextLine();
@@ -42,7 +42,7 @@ public class MemorySimulator {
                     manager.printMemory();
                     break;
                 case 6:
-                    System.out.println("Saliendo...");
+                    System.out.println("Volviendo al menú principal...");
                     break;
                 default:
                     System.out.println("Opción inválida");
